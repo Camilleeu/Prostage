@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProstageController!{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+  <div class="row">
+    {%for stage in stages%}
+    <div class="col-md-3">
+      <div class="card">
+        <img src="http://lorempixel.com/200/200/" class="card-img-top" alt="Image">
+        <div class="card-body">
+          <h5 class="card-title">{{stage.titre}}</h5>
+          <p class="card-text">{{stage.description}}</p>
+          <a href="{{path('stage', {'id' : stage.id})}}" class="btn btn-primary">Voir plus</a>
+        </div>
+      </div>
+    </div>
+    {%endfor%}
+    </div>
+</div>
+{% endblock %}
